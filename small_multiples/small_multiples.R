@@ -38,6 +38,7 @@ p1 <- imd_2015 %>%
 
 p2 <- add_sub(p1, "*Each LSOA has an average of approximately 1,500 residents", size = 10,
               x = 0, hjust = 0)
+ggdraw(p2)
 ggsave("GM_IMD_2015.png", dpi = 300, scale = 1)
 
 
