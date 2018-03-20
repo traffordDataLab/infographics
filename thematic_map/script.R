@@ -30,7 +30,7 @@ plot(st_geometry(filter(roads_lsoa, area_code == "E01006075")), col = "#D6437A",
 # plot data  ---------------------------
 ggplot() +
   geom_sf(data = roads_lsoa, aes(colour = factor(value)), alpha = 1, size = 0.1, show.legend = "line") +
-  geom_text(data = tc, aes(lon, lat, label = name), size = 2.5, color = "white") +
+  geom_text(data = tc, aes(lon, lat, label = name), size = 2.5, color = "white", alpha = 0.8) +
   scale_colour_manual(breaks = 1:10,
                       values = c("#A31A31", "#D23B33", "#EB6F4A", "#FCB562", "#F4D78D", 
                                  "#D8E9EC", "#AAD1DE", "#75A8C8", "#4D77AE", "#353B91"),
@@ -38,14 +38,13 @@ ggplot() +
   labs(x = NULL, y = NULL, 
        title = "Deprivation in Trafford by LSOA", 
        subtitle = "Source: English Indices of Deprivation 2015, MHCLG",
-       caption = paste("Contains OS data @ Crown copyright 2018 \n
-                       @traffordDataLab"),
+       caption = "Contains OS data @ Crown copyright 2018  |  @traffordDataLab",
        colour = 'IMD decile') +
   theme(plot.title = element_text(size = 14, colour = "#757575", hjust = 0.5),
-        plot.subtitle = element_text(size = 10, colour = "#757575", hjust = 0.5),
-        plot.caption = element_text(size = 6, colour = "#757575", hjust = 1),
-        legend.position = c(0.3, 0.02),
-        legend.title = element_text(size = 9, colour = "#757575"),
+        plot.subtitle = element_text(size = 8, colour = "#757575", hjust = 0.5),
+        plot.caption = element_text(size = 6, colour = "#757575", hjust = 1, margin = margin(b = 2)),
+        legend.position = c(0.25, 0.06),
+        legend.title = element_text(size = 8, colour = "#757575"),
         legend.text = element_text(size = 7, colour = "#757575"),
         legend.background = element_rect(fill = "#212121", color = NA),
         legend.key = element_rect(fill = "#212121", colour = NA),
