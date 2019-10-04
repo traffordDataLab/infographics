@@ -15,7 +15,7 @@ source("https://github.com/traffordDataLab/assets/raw/master/theme/ggplot2/theme
 
 df <- read_csv("https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/833982/File_7_-_All_IoD2019_Scores__Ranks__Deciles_and_Population_Denominators.csv") %>% 
   clean_names() %>% 
-  filter(local_authority_district_name_2019 %in% c("England", "Greater Manchester Met County", "Bolton", "Bury", "Manchester", "Oldham", "Rochdale", "Salford", "Stockport", "Tameside", "Trafford", "Wigan")) %>% 
+  filter(local_authority_district_name_2019 %in% c("Bolton", "Bury", "Manchester", "Oldham", "Rochdale", "Salford", "Stockport", "Tameside", "Trafford", "Wigan")) %>% 
   select(lsoa11cd = 1, lad19nm = 4, 5:34) %>% 
   gather(variable, value, -lsoa11cd, -lad19nm) %>% 
   mutate(measure = case_when(str_detect(variable, "score") ~ "score", 
