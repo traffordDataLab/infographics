@@ -43,7 +43,7 @@ df <- read_csv("https://assets.publishing.service.gov.uk/government/uploads/syst
 
 # plot data ---------------------------
 anchors <- data.frame(
-  x = c(0, 3284, 6569, 9853, 13138, 16422, 19706, 22991, 26275, 29560, 32844),
+  x = c(1, 3285, 6569, 9854, 13138, 16423, 19707, 22991, 26276, 29560, 32844),
   y = -0.08)
 
 ggplot(filter(df, index_domain == "Index of Multiple Deprivation")) + 
